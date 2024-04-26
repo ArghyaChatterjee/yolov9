@@ -58,8 +58,7 @@ yolov9
     - yolov9-c-converted.pt
 ```
 
-### Detection Model
-Activate the virtual env and run the inference:
+For detection model, activate the virtual env and run the inference:
 ```shell
 cd yolov9
 source yolo_v9_venv/bin/activate
@@ -71,16 +70,14 @@ python3 detect/detect.py --source './data/images/horses.jpg' --img 640 --device 
 # python detect.py --source './data/images/horses.jpg' --img 640 --device 0 --weights './weights/gelan-c.pt' --name gelan_c_c_640_detect
 ```
 
-### Segmentation Model
-Activate the virtual env and run the inference:
+For segmentation model, activate the virtual env and run the inference:
 ```shell
 cd yolov9
 source yolo_v9_venv/bin/activate
 python3 segment/predict.py --source './data/images/horses.jpg' --weights './weights/gelan-c-seg.pt' --conf-thres 0.25 --iou-thres 0.45 --imgsz 640 640 --device 0
 ```
 
-### Panoptic Segmentation Model
-Activate the virtual env and run the inference:
+For panoptic segmentation model, activate the virtual env and run the inference:
 ```shell
 cd yolov9
 source yolo_v9_venv/bin/activate
@@ -88,24 +85,21 @@ python3 detect.py --source './data/images/horses.jpg' --img 640 --device 0 --wei
 ```
 
 ### Webcam demo
-### Detection Model
-Activate the virtual env and run the inference:
+For detection model, activate the virtual env and run the inference:
 ```shell
 cd yolov9
 source yolo_v9_venv/bin/activate
 python3 detect/predict_webcam.py
 ``` 
 
-### Segmentation Model
-Activate the virtual env and run the inference:
+For segmentation model, activate the virtual env and run the inference:
 ```shell
 cd yolov9
 source yolo_v9_venv/bin/activate
 python3 segment/predict_webcam.py
 ``` 
 
-### Panoptic Segmentation Model
-Activate the virtual env and run the inference:
+For panoptic segmentation model, activate the virtual env and run the inference:
 ```shell
 cd yolov9
 source yolo_v9_venv/bin/activate
