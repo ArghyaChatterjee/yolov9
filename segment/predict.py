@@ -98,7 +98,9 @@ def run(
         # Inference
         with dt[1]:
             visualize = increment_path(save_dir / Path(path).stem, mkdir=True) if visualize else False
+            # pred, proto = model(im, augment=augment, visualize=visualize)[:2]
             pred, proto = model(im, augment=augment, visualize=visualize)[:2]
+            proto = proto[2]
 
         # NMS
         with dt[2]:
@@ -123,6 +125,10 @@ def run(
             imc = im0.copy() if save_crop else im0  # for save_crop
             annotator = Annotator(im0, line_width=line_thickness, example=str(names))
             if len(det):
+                # print("Type of proto:", type(proto))
+                # print("Content of proto:", proto)
+                print("Shape of proto[0][i]:", proto[0][i].shape)
+                # masks = process_mask(proto[0][i], det[:, 6:], det[:, :4], im.shape[2:], upsample=True)
                 masks = process_mask(proto[i], det[:, 6:], det[:, :4], im.shape[2:], upsample=True)  # HWC
                 det[:, :4] = scale_boxes(im.shape[2:], det[:, :4], im0.shape).round()  # rescale boxes to im0 size
 

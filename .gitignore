@@ -1,0 +1,4 @@
+yolo_v9_venv/
+weights/
+runs/
+__pycache__/
